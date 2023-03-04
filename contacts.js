@@ -29,7 +29,7 @@ const getContactById = async (id) => {
   const searchedContact = JSON.parse(contacts).find((el) => {
     return el.id === id.toString();
   });
-  console.log(searchedContact);
+  console.log(searchedContact, "");
   return searchedContact;
 };
 
