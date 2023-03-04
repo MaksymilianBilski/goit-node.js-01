@@ -1,0 +1,29 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "node.js homework",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start",
+    "test": "npm test",
+    "start:dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "goit-node.js-01"
+  },
+  "keywords": [
+    "node.js",
+    "homework"
+  ],
+  "author": "Maksymilian Bilski",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "nanoid": "^4.0.1",
+    "path": "^0.12.7",
+    "yargs": "^17.7.1"
+  }
+}
