@@ -11,7 +11,6 @@ const addContact = async (id, name, email, phone) => {
     contactsPath + "/contacts.json",
     JSON.stringify(updatedContacts)
   );
-  console.table(updatedContacts);
 };
 
 const removeContact = async (id) => {
@@ -31,13 +30,12 @@ const getContactById = async (id) => {
   const searchedContact = JSON.parse(contacts).find((el) => {
     return el.id === id.toString();
   });
-  console.table(searchedContact);
+  console.log(searchedContact);
   return searchedContact;
 };
 
 const listContacts = async () => {
   const response = await fs.readFile(contactsPath + "/contacts.json");
-  console.table(JSON.parse(response));
   return response.toString();
 };
 

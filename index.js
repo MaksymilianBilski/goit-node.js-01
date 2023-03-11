@@ -1,4 +1,17 @@
-const argv = require("yargs").argv;
+// const argv = require("yargs").argv;
+const { Command } = require("commander");
+const program = new Command();
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
+
+program.parse(process.argv);
+
+const argv = program.opts();
+
 const contacts = require("./contacts");
 
 const { addContact, listContacts, getContactById, removeContact } = contacts;
@@ -12,7 +25,8 @@ const randomID = () => {
   return id.toFixed(0);
 };
 
-function invokeAction({ action, id, name, email, phone }) {
+function invokeAction(argv) {
+  const { action, id, name, email, phone } = argv;
   switch (action) {
     case "add":
       addContact(randomID(), name, email, phone);
